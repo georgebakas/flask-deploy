@@ -8,10 +8,10 @@ ADD . /flask-deploy
 WORKDIR /flask-deploy
 
 # Install all dependencies using Pipenv
-RUN pipenv install --system --skip-lock
+#RUN pipenv install --system --skip-lock
 
-RUN pip install gunicorn[gevent]
-
+RUN pip install flask flask-restful flask-sqlalchemy flask-migrate celery gunicorn[gevent]
+#RUN pip install gunicorn[gevent]
 # Expose TCP port 5000 to the host
 EXPOSE 5000
 
